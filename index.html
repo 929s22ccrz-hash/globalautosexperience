@@ -49,12 +49,12 @@
         "sameAs": ["https://www.instagram.com/global__autos/", "https://www.tiktok.com/@globalautos"]
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-1Qgfei0x.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/bind-config-D-zCb-Zt.js">
-    <link rel="modulepreload" crossorigin href="/assets/shared-CpuzHXvT.js">
+    <script type="module" crossorigin src="/assets/main-Bs0nXee7.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/bind-config-D4U6gMXJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/shared-DGQwIT02.js">
     <link rel="modulepreload" crossorigin href="/assets/consent-XkNPD3w1.js">
     <link rel="stylesheet" crossorigin href="/assets/bind-config-DM2hvPAX.css">
-    <link rel="stylesheet" crossorigin href="/assets/main-B9-XFgCS.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-DKP_Hy3C.css">
   </head>
   <body class="is-loading" id="top">
     <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -102,7 +102,7 @@
     <a class="nav__link" href="#coleccion"><span>Colección</span></a>
     <a class="nav__link" href="#experiencias"><span>Experiencias</span></a>
     <a class="nav__link" href="#destinos"><span>Destinos</span></a>
-    <a class="nav__link" href="#faq"><span>FAQ</span></a>
+    <a class="nav__link" href="#preguntas"><span>Preguntas</span></a>
   </nav>
 
   <div class="nav__actions">
@@ -123,16 +123,20 @@
   <div class="menu__inner container">
     <nav class="menu__nav" aria-label="Menú">
       <ul class="menu__list">
-        <li><a class="menu__link" href="#flota" data-menu-image="/img/fleet/toyota-prado-tx.webp"><span class="menu__num">01</span><span class="menu__text">Flota</span></a></li>
-        <li><a class="menu__link" href="#coleccion" data-menu-image="/img/fleet/chevrolet-tahoe.webp"><span class="menu__num">02</span><span class="menu__text">Colección</span></a></li>
-        <li><a class="menu__link" href="#experiencias" data-menu-image="/img/mood/jet-stairs.webp"><span class="menu__num">03</span><span class="menu__text">Experiencias</span></a></li>
-        <li><a class="menu__link" href="#destinos" data-menu-image="/img/places/medellin.webp"><span class="menu__num">04</span><span class="menu__text">Destinos</span></a></li>
-        <li><a class="menu__link" href="#reservar" data-menu-image="/img/mood/cls-silhouette.webp"><span class="menu__num">05</span><span class="menu__text">Reservar</span></a></li>
+        <li><a class="menu__link" href="#flota" data-menu-image="/img/fleet/chevrolet-tahoe.webp"><span class="menu__text"><span class="menu__label">La flota</span></span></a></li>
+        <li><a class="menu__link" href="#coleccion" data-menu-image="/img/fleet/mazda-cx5.webp"><span class="menu__text"><span class="menu__label">Colección completa</span></span></a></li>
+        <li><a class="menu__link" href="#experiencias" data-menu-image="/img/mood/jet-stairs.webp"><span class="menu__text"><span class="menu__label">Experiencias</span></span></a></li>
+        <li><a class="menu__link" href="#destinos" data-menu-image="/img/places/medellin.webp"><span class="menu__text"><span class="menu__label">Destinos</span></span></a></li>
+        <li><a class="menu__link" href="#proceso" data-menu-image="/img/fleet/mercedes-a200.webp"><span class="menu__text"><span class="menu__label">Proceso</span></span></a></li>
+        <li><a class="menu__link" href="#momentos" data-menu-image="/img/fleet/mercedes-sprinter-interior.webp"><span class="menu__text"><span class="menu__label">Momentos</span></span></a></li>
+        <li><a class="menu__link" href="#comunidad" data-menu-image="/img/fleet/bmw-x4-interior.webp"><span class="menu__text"><span class="menu__label">Comunidad</span></span></a></li>
+        <li><a class="menu__link" href="#reservar" data-menu-image="/img/fleet/mercedes-sprinter.webp"><span class="menu__text"><span class="menu__label">Reservas</span></span></a></li>
+        <li><a class="menu__link" href="#preguntas" data-menu-image="/img/fleet/toyota-corolla-hybrid.webp"><span class="menu__text"><span class="menu__label">Preguntas</span></span></a></li>
       </ul>
     </nav>
 
     <figure class="menu__preview media" aria-hidden="true">
-      <img data-src="/img/fleet/toyota-prado-tx-1024.webp" alt="" decoding="async" data-menu-preview />
+      <img data-src="/img/fleet/chevrolet-tahoe-1024.webp" alt="" decoding="async" data-menu-preview />
     </figure>
 
     <div class="menu__foot">
@@ -308,15 +312,18 @@
     <ul class="manifesto__stats" data-manifesto-stats aria-label="Global Autos en cifras"></ul>
 
     <div class="manifesto__promise">
+      <!-- En celular se ve a 92vw, pero "56vw" hace que el navegador elija la versión de 640 px
+           (51 KB): se carga al entrar y en 3G lento cada KB retrasa la página. -->
       <figure class="manifesto__media media media--parallax" data-reveal="clip">
         <img
           src="/img/mood/a200-retrato-mono.webp"
           srcset="/img/mood/a200-retrato-mono-640.webp 640w, /img/mood/a200-retrato-mono-1024.webp 1024w, /img/mood/a200-retrato-mono.webp 1066w"
-          sizes="(max-width: 899px) 92vw, 40vw"
+          sizes="(max-width: 899px) 56vw, 40vw"
           alt="Mercedes-Benz A 200 de la flota, de frente, en blanco y negro"
           width="1066"
           height="1600"
           loading="lazy"
+          fetchpriority="low"
           decoding="async"
           data-parallax="0.1"
         />
@@ -355,11 +362,11 @@
   </div>
 </section>
 
-      <section class="fleet theme-dark" id="flota" data-section="fleet" aria-labelledby="fleet-title">
+      <section class="fleet theme-dark" id="flota" data-name="La flota" data-section="fleet" aria-labelledby="fleet-title">
   <div class="container">
     <header class="section-head fleet__head">
       <div class="fleet__head-main">
-        <p class="label label--line">( 01 — La flota )</p>
+        <p class="label label--line">La flota</p>
         <h2 class="h-2 fleet__title" id="fleet-title" data-reveal="lines">Máquinas que <em>definen</em> el camino</h2>
       </div>
       <p class="section-head__aside fleet__aside" data-reveal="fade">
@@ -399,7 +406,7 @@
   </div>
 </section>
 
-      <section class="section ring theme-dark" id="caracter" data-section="ring" aria-labelledby="ring-title">
+      <section class="section ring theme-dark" id="vitrina" data-name="Vitrina 360°" data-section="ring" aria-labelledby="ring-title">
   <div class="container ring__head">
     <p class="label label--dot ring__eyebrow" data-reveal="fade">Vitrina 360°</p>
     <h2 class="h-1 ring__title" id="ring-title" data-reveal="lines">Elige tu <em>carácter</em></h2>
@@ -459,11 +466,11 @@
   <p class="sr-only" aria-live="polite" aria-atomic="true" data-ring-live></p>
 </section>
 
-      <section class="section collection theme-light" id="coleccion" data-section="collection" aria-labelledby="coll-title">
+      <section class="section collection theme-light" id="coleccion" data-name="Colección completa" data-section="collection" aria-labelledby="coll-title">
   <div class="container">
     <header class="section-head coll__head">
       <div>
-        <p class="label label--line">( 02 — Colección completa )</p>
+        <p class="label label--line">Colección completa</p>
         <h2 class="h-2 coll__title" id="coll-title" data-reveal="lines">Toda la flota, <em>a tu medida</em></h2>
       </div>
       <p class="section-head__aside" data-reveal="fade">
@@ -497,11 +504,11 @@
   </div>
 </section>
 
-      <section class="section experiences theme-dark" id="experiencias" data-section="experiences" aria-labelledby="exp-title">
+      <section class="section experiences theme-dark" id="experiencias" data-name="Experiencias" data-section="experiences" aria-labelledby="exp-title">
   <div class="container">
     <header class="section-head exp__head">
       <div>
-        <p class="label label--line">( 03 — Experiencias )</p>
+        <p class="label label--line">Experiencias</p>
         <h2 class="h-2 exp__title" id="exp-title" data-reveal="lines">Más que un auto, <em>una experiencia</em></h2>
       </div>
       <p class="section-head__aside" data-reveal="fade">
@@ -514,11 +521,11 @@
   </div>
 </section>
 
-      <section class="section destinations theme-light" id="destinos" data-section="destinations" aria-labelledby="dest-title">
+      <section class="section destinations theme-light" id="destinos" data-name="Destinos" data-section="destinations" aria-labelledby="dest-title">
   <div class="container">
     <header class="section-head dest__head">
       <div>
-        <p class="label label--line">( 04 — Destinos )</p>
+        <p class="label label--line">Destinos</p>
         <h2 class="h-2 dest__title" id="dest-title" data-reveal="lines">Desde Medellín, hasta el <em>Eje Cafetero</em></h2>
       </div>
       <p class="section-head__aside" data-reveal="fade">
@@ -550,12 +557,12 @@
   </div>
 </section>
 
-      <section class="section process theme-dark" id="proceso" data-section="process" aria-labelledby="proc-title">
+      <section class="section process theme-dark" id="proceso" data-name="Proceso" data-section="process" aria-labelledby="proc-title">
   <div class="process__pin" data-proc-pin>
     <div class="container process__inner">
       <header class="section-head process__head">
         <div>
-          <p class="label label--line">( 05 — Proceso )</p>
+          <p class="label label--line">Proceso</p>
           <h2 class="h-2 process__title" id="proc-title" data-reveal="lines">Tres pasos hacia el <em>volante</em></h2>
         </div>
         <p class="section-head__aside" data-reveal="fade">
@@ -629,11 +636,11 @@
   (testimonials), se muestran aquí con su autor; si está vacío, se muestran
   los momentos del servicio (texto de marca, no reseñas).
 -->
-<section class="section moments theme-dark" id="momentos" data-section="testimonials" aria-labelledby="moments-title">
+<section class="section moments theme-dark" id="momentos" data-name="Momentos" data-section="testimonials" aria-labelledby="moments-title">
   <div class="container">
     <header class="section-head moments__head">
       <div>
-        <p class="label label--line" data-moments-label>( 06 — Momentos )</p>
+        <p class="label label--line" data-moments-label>Momentos</p>
         <h2 class="h-2" id="moments-title" data-reveal="lines" data-moments-title>Así se vive <em>Global Autos</em></h2>
       </div>
       <p class="section-head__aside" data-reveal="fade" data-moments-aside>
@@ -669,11 +676,11 @@
   <p class="sr-only" aria-live="polite" data-moments-live></p>
 </section>
 
-      <section class="section instagram theme-dark" id="instagram" data-section="instagram" aria-labelledby="insta-title">
+      <section class="section instagram theme-dark" id="comunidad" data-name="Comunidad" data-section="instagram" aria-labelledby="insta-title">
   <div class="container">
     <header class="insta__head">
       <div>
-        <p class="label label--line">( 07 — Comunidad )</p>
+        <p class="label label--line">Comunidad</p>
         <h2 class="h-2 insta__title" id="insta-title" data-reveal="lines">Síguenos en <em>Instagram</em></h2>
       </div>
       <div class="insta__follow" data-reveal="fade">
@@ -695,14 +702,14 @@
   </div>
 </section>
 
-      <section class="section booking theme-dark" id="reservar" data-section="booking" aria-labelledby="booking-title">
+      <section class="section booking theme-dark" id="reservar" data-name="Reservas" data-section="booking" aria-labelledby="booking-title">
   <div class="booking__bg media media--parallax" aria-hidden="true">
     <img src="/img/mood/cls-silhouette-mono.webp" srcset="/img/mood/cls-silhouette-mono-640.webp 640w, /img/mood/cls-silhouette-mono-1024.webp 1024w, /img/mood/cls-silhouette-mono.webp 1800w" sizes="100vw" alt="" width="1800" height="1125" loading="lazy" decoding="async" data-parallax="0.1" />
   </div>
 
   <div class="container booking__grid">
     <div class="booking__intro">
-      <p class="label label--line">( 08 — Reservas )</p>
+      <p class="label label--line">Reservas</p>
       <h2 class="h-1 booking__title" id="booking-title" data-reveal="lines">Reserva tu <em>próximo</em> viaje</h2>
       <p class="lead booking__lead" data-reveal="fade">
         Cuéntanos qué necesitas y te confirmamos la disponibilidad por WhatsApp.
@@ -835,11 +842,11 @@
   </div>
 </section>
 
-      <section class="section faq theme-light" id="faq" data-section="faq" aria-labelledby="faq-title">
+      <section class="section faq theme-light" id="preguntas" data-name="Preguntas" data-section="faq" aria-labelledby="faq-title">
   <div class="container faq__grid">
     <div class="faq__intro">
       <div class="faq__sticky">
-        <p class="label label--line">( 09 — Preguntas )</p>
+        <p class="label label--line">Preguntas</p>
         <h2 class="h-2 faq__title" id="faq-title" data-reveal="lines">Preguntas <em>frecuentes</em></h2>
         <p class="lead faq__lead" data-reveal="fade">¿Tienes otra duda? Escríbenos por WhatsApp y te respondemos.</p>
         <a class="btn btn--solid faq__cta" data-config="whatsapp-link" href="#" data-magnetic="0.3">
@@ -886,7 +893,7 @@
             <li><a class="link-line" href="#experiencias">Experiencias</a></li>
             <li><a class="link-line" href="#destinos">Destinos</a></li>
             <li><a class="link-line" href="#reservar">Reservar</a></li>
-            <li><a class="link-line" href="#faq">Preguntas frecuentes</a></li>
+            <li><a class="link-line" href="#preguntas">Preguntas frecuentes</a></li>
           </ul>
         </nav>
 
@@ -931,7 +938,8 @@
         </p>
         <p class="footer__legal-note">
           Precios en pesos colombianos, con seguro contra terceros incluido y sin IVA adicional (no responsables de IVA).
-          Fotos y modelo 3D de referencia del modelo, no de la unidad exacta.
+          Fotos reales de nuestra flota (los modelos sin foto propia se marcan como referencia); el modelo 3D de la
+          portada es de referencia.
         </p>
       </div>
     </div>
@@ -974,6 +982,7 @@
         <div class="car-modal__frame" data-modal-frame>
           <img class="car-modal__img" data-modal-img src="" alt="" decoding="async" draggable="false" />
           <span class="car-modal__frame-shade" aria-hidden="true"></span>
+          <p class="car-modal__photo-note" data-modal-photo-note hidden>Foto de referencia del modelo</p>
         </div>
         <div class="car-modal__gallery" data-modal-gallery role="group" aria-label="Galería de fotos"></div>
         <p class="car-modal__frame-index" aria-hidden="true" data-modal-anim>
