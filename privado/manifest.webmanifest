@@ -1,0 +1,18 @@
+{
+  "name": "Global Autos Privé",
+  "short_name": "GA Privé",
+  "description": "La app privada del dueño de Global Autos: flota, contratos, ingresos y daños.",
+  "id": "/privado/",
+  "start_url": "/privado/#/inicio",
+  "scope": "/privado/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "lang": "es-CO",
+  "icons": [
+    { "src": "/privado/iconos/icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/privado/iconos/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/privado/iconos/icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
