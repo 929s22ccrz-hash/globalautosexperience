@@ -1356,7 +1356,9 @@ const mes = (d) => new Intl.DateTimeFormat("es-CO", { month: "long" }).format(d)
 * datos: { ajustes, contratos, vehiculos, firmados:Set<contratoId> }
 * Devuelve [{ clave, title, body, url, tag }] sin los ya enviados.
 */
-function decidir({ ajustes = {}, contratos = [], vehiculos = [], documentos = [], firmados = /* @__PURE__ */ new Set() }, estado = {}, now = /* @__PURE__ */ new Date()) {
+function decidir({ ajustes = {}, contratos: todos = [], vehiculos = [], documentos: docs = [], firmados = /* @__PURE__ */ new Set() }, estado = {}, now = /* @__PURE__ */ new Date()) {
+	const contratos = todos.filter((c) => !c.demo);
+	const documentos = docs.filter((d) => !d.demo);
 	const enviados = estado.enviados || {};
 	const pref = ajustes.avisos || {};
 	const antes = (Number(pref.antesMin) || 120) * MIN;
