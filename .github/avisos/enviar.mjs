@@ -438,7 +438,7 @@ const fleet = [
 		},
 		sheet: [["Cabina", "Tres filas de asientos y pantallas para los pasajeros de atrás"]],
 		badges: ["V8", "Tres filas"],
-		pricePerDay: 8e5,
+		pricePerDay: 95e4,
 		featured: true,
 		armored: false,
 		chauffeur: true
@@ -707,7 +707,6 @@ const fleet = [
 		brand: "Toyota",
 		model: "4Runner",
 		year: 2018,
-		refPhotos: true,
 		type: "Camioneta SUV",
 		category: "suv",
 		article: "la",
@@ -719,7 +718,10 @@ const fleet = [
 		gallery: [
 			"/img/fleet/toyota-4runner-2.webp",
 			"/img/fleet/toyota-4runner-3.webp",
-			"/img/fleet/toyota-4runner-interior.webp"
+			"/img/fleet/toyota-4runner-4.webp",
+			"/img/fleet/toyota-4runner-5.webp",
+			"/img/fleet/toyota-4runner-interior.webp",
+			"/img/fleet/toyota-4runner-interior-2.webp"
 		],
 		key: [
 			{
