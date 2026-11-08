@@ -3,8 +3,8 @@
 // · funciona sin señal (guarda la app y las fotos de la flota);
 // · muestra las notificaciones que envía el aviso programado.
 // ─────────────────────────────────────────────────────────────
-const CACHE = 'ga-prive-v1'
-const SHELL = ['/privado/', '/privado/manifest.webmanifest', '/privado/iconos/icono-192.png', '/brand/ga-mark.svg', '/brand/ga-lockup-white.png']
+const CACHE = 'ga-prive-v3' // v2: fotos reales de la Prado TX gris (mismas URL que las de referencia)
+const SHELL = ['/privado/', '/privado/manifest.webmanifest', '/privado/iconos/icono-192.png', '/brand/ga-mark.svg', '/brand/ga-lockup-white.png', '/contratos/arrendamiento-carros.pdf', '/contratos/arrendamiento-van.pdf', '/contratos/conduccion.pdf']
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()))
@@ -36,7 +36,38 @@ self.addEventListener('fetch', (e) => {
     )
     return
   }
-  // Código con hash, fuentes y fotos: de la memoria y, si no está, de la red
+  // Contratos oficiales (PDF en blanco): primero la red (por si cambian), sin señal la copia guardada
+  if (url.pathname.startsWith('/contratos/') && url.pathname.endsWith('.pdf')) {
+    e.respondWith(
+      fetch(req)
+        .then((res) => {
+          if (res.ok) {
+            const copy = res.clone()
+            caches.open(CACHE).then((c) => c.put(url.pathname, copy))
+          }
+          return res
+        })
+        .catch(() => caches.match(url.pathname)),
+    )
+    return
+  }
+  // Fotos del sitio (/img/): de la memoria al instante y, por detrás, se trae la versión
+  // de la red para la próxima vez (si se cambia una foto con el mismo nombre, se actualiza sola)
+  if (url.pathname.startsWith('/img/')) {
+    const fresh = fetch(req)
+      .then((res) => {
+        if (res.ok) {
+          const copy = res.clone()
+          return caches.open(CACHE).then((c) => c.put(req, copy)).then(() => res)
+        }
+        return res
+      })
+      .catch(() => null)
+    e.waitUntil(fresh)
+    e.respondWith(caches.match(req).then((hit) => hit || fresh.then((res) => res || Response.error())))
+    return
+  }
+  // Código con hash, fuentes y demás: de la memoria y, si no está, de la red
   if (url.pathname.startsWith('/assets/') || /\.(webp|png|jpg|svg|woff2?)$/.test(url.pathname)) {
     e.respondWith(
       caches.match(req).then(
@@ -80,7 +111,14 @@ self.addEventListener('push', (e) => {
 
 self.addEventListener('notificationclick', (e) => {
   e.notification.close()
-  const url = e.notification.data?.url || '/privado/#/inicio'
+  // Solo páginas de la app (una notificación nunca abre un sitio ajeno)
+  let url = '/privado/#/inicio'
+  try {
+    const u = new URL(e.notification.data?.url || url, self.location.origin)
+    if (u.origin === self.location.origin && u.pathname.startsWith('/privado/')) url = u.href
+  } catch {
+    /* dirección inválida: inicio */
+  }
   e.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((list) => {
       for (const client of list) {

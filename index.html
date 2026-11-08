@@ -6,6 +6,9 @@
     <link rel="preload" as="font" type="font/woff2" href="/assets/syncopate-latin-700-normal-D6Fv_luC.woff2" crossorigin="">
 
     <meta charset="UTF-8" />
+    <!-- Seguridad: sin plugins, sin cambiar la base de los enlaces y formularios solo hacia el sitio -->
+    <meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Global Autos — Renta de autos de lujo en Medellín y Colombia</title>
     <meta
@@ -49,14 +52,14 @@
         "sameAs": ["https://www.instagram.com/global__autos/", "https://www.tiktok.com/@globalautos"]
       }
     </script>
-    <script type="module" crossorigin src="/assets/main-BN5d5GhQ.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/config-CBPkBc8u.js">
-    <link rel="modulepreload" crossorigin href="/assets/shared-Dn-CvNwW.js">
-    <link rel="modulepreload" crossorigin href="/assets/bind-config-l_FJKPF1.js">
+    <script type="module" crossorigin src="/assets/main-DcHNh3x8.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/proteccion-F1ntS3rC.js">
+    <link rel="modulepreload" crossorigin href="/assets/shared-Cuc4PoCd.js">
+    <link rel="modulepreload" crossorigin href="/assets/bind-config-DZPxWeJG.js">
     <link rel="modulepreload" crossorigin href="/assets/consent-XkNPD3w1.js">
-    <link rel="modulepreload" crossorigin href="/assets/fleet-x6-rYJjW.js">
-    <link rel="stylesheet" crossorigin href="/assets/config-D0EtI-Aj.css">
-    <link rel="stylesheet" crossorigin href="/assets/main-DKP_Hy3C.css">
+    <link rel="modulepreload" crossorigin href="/assets/fleet-DxaU7wwZ.js">
+    <link rel="stylesheet" crossorigin href="/assets/proteccion-D0EtI-Aj.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-CMIrE9Yx.css">
     <link rel="stylesheet" crossorigin href="/assets/latin-700-CklcGGL1.css">
   </head>
   <body class="is-loading" id="top">
@@ -373,7 +376,7 @@
         <h2 class="h-2 fleet__title" id="fleet-title" data-reveal="lines">Máquinas que <em>definen</em> el camino</h2>
       </div>
       <p class="section-head__aside fleet__aside" data-reveal="fade">
-        Nueve máquinas escogidas de nuestra colección. Llegan a tu puerta impecables, listas para que el camino sea
+        <span data-fleet-count>Diez</span> máquinas escogidas de nuestra colección. Llegan a tu puerta impecables, listas para que el camino sea
         solo tuyo.
       </p>
     </header>
@@ -486,7 +489,7 @@
       <div class="coll__chips" role="group" aria-label="Filtrar por categoría" data-coll-chips></div>
       <div class="coll__tools">
         <p class="coll__count" aria-live="polite" aria-atomic="true">
-          <span class="coll__count-num" data-coll-count>12</span>
+          <span class="coll__count-num" data-coll-count>13</span>
           <span data-coll-count-label>modelos</span>
         </p>
         <label class="coll__sort">

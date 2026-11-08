@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /privado/
+Disallow: /firmar/
+Disallow: /contratos/

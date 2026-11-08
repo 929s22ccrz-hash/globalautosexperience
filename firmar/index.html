@@ -6,6 +6,9 @@
     <link rel="preload" as="font" type="font/woff2" href="/assets/syncopate-latin-700-normal-D6Fv_luC.woff2" crossorigin="">
 
     <meta charset="UTF-8" />
+    <!-- Seguridad: solo habla con Global Autos y su nube; no se deja meter en otra página -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://s3.eu-central-003.backblazeb2.com http://localhost:* http://127.0.0.1:*; font-src 'self' data:; connect-src 'self' data: blob: https://s3.eu-central-003.backblazeb2.com http://localhost:* http://127.0.0.1:* ws://localhost:*; worker-src 'self' blob:; manifest-src 'self'; media-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <style id="anti-iframe">html{display:none!important}</style>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Firma tu contrato · Global Autos</title>
     <meta name="robots" content="noindex, nofollow" />
@@ -14,12 +17,13 @@
     <meta name="description" content="Lee y firma tu contrato de Global Autos desde el celular." />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
-    <script type="module" crossorigin src="/assets/firmar-CFaBM4NY.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/config-CBPkBc8u.js">
-    <link rel="modulepreload" crossorigin href="/assets/firma-Du1Q1C2F.js">
-    <link rel="stylesheet" crossorigin href="/assets/config-D0EtI-Aj.css">
-    <link rel="stylesheet" crossorigin href="/assets/firma-CwPToapK.css">
+    <script type="module" crossorigin src="/assets/firmar-BGd8DvPV.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/proteccion-F1ntS3rC.js">
+    <link rel="modulepreload" crossorigin href="/assets/firma-F_aOKOXi.js">
+    <link rel="stylesheet" crossorigin href="/assets/proteccion-D0EtI-Aj.css">
+    <link rel="stylesheet" crossorigin href="/assets/firma-D4SZuX0e.css">
     <link rel="stylesheet" crossorigin href="/assets/firmar-BVWp4sPm.css">
+    <link rel="stylesheet" crossorigin href="/assets/proteccion-CvpAhjgf.css">
   </head>
   <body class="app firmar">
     <main id="app" class="firmar__main" aria-live="polite">
